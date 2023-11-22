@@ -46,7 +46,7 @@ You must also install [upx](https://upx.github.io/) to compress the final execut
   ```sh
   dir -h target/<host-os>/release/hello-world
   ```
-  (Replace <host-os> with your host os found in the previous step. e.g. for linux, it can be: x86_64-unknown-linux-gnu)
+  (Replace \<host-os> with your host os found in the previous step. e.g. for linux, it can be: x86_64-unknown-linux-gnu)
 
 - Run the executable
   ```sh
@@ -59,11 +59,11 @@ You must also install [upx](https://upx.github.io/) to compress the final execut
 ## Build (Docker)
 
 - Install [Docker](https://docs.docker.com/get-docker/)
-- Check the size of the executable
-  ```sh
-  docker images smallest-rust-binary-bin:latest
-  ```
 - Run
   ```sh
   docker compose up
+  ```
+- Check the size of the executable
+  ```sh
+  docker images smallest-rust-binary-bin:latest
   ```
