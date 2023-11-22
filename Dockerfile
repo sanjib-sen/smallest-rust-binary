@@ -9,9 +9,9 @@ WORKDIR /app
 COPY . .
 RUN cargo +nightly build -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort \
     --target x86_64-unknown-linux-musl --release
-RUN upx --best --lzma target/x86_64-unknown-linux-musl/release/hello-world-min
+RUN upx --best --lzma target/x86_64-unknown-linux-musl/release/hello-world
 
 
 FROM scratch
-COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/hello-world-min .
-CMD ["./hello-world-min"]
+COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/hello-world .
+CMD ["./hello-world"]
